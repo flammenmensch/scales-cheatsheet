@@ -20,7 +20,7 @@ const RootNoteSelector = (props: Props) => (
             : ''
         }`}
         onClick={() => props.onChange(note)}
-        href={`/#${encodeURIComponent(note)}`}
+        href={`${process.env.PUBLIC_URL}/#${encodeURIComponent(note)}`}
       >
         {children}
       </a>
