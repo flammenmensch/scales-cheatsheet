@@ -1,0 +1,26 @@
+.root-note-selector {
+  list-style: none;
+  padding: 0 var(--size-l);
+  display: flex;
+
+  &__note {
+    text-decoration: none;
+    opacity: 0.25;
+    color: var(--primary-color);
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &--selected {
+      &:hover {
+        opacity: 1;
+      }
+      opacity: 1;
+      font-weight: 600;
+      text-shadow: var(--text-glow);
+    }
+
+  }
+}

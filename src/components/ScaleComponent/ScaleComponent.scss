@@ -1,0 +1,38 @@
+.scale {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-color);
+  color: var(--primary-color);
+  padding: var(--size-l);
+  border-radius: var(--radii);
+
+  box-shadow: var(--large-shadow);
+
+  &:not(:last-child) {
+    margin-bottom: var(--size-l);
+  }
+
+  &__title {
+    margin: 0 0 var(--size-xl) 0;
+    padding: 0;
+    letter-spacing: .05rem;
+    font-size: 1.15rem;
+    font-weight: var(--bold);
+  }
+
+  &__notes {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__note {
+      opacity: .25;
+
+      &--active {
+        opacity: 1;
+        font-weight: 600;
+      }
+    }
+  }
+}

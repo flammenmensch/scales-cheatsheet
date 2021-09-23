@@ -1,0 +1,114 @@
+:root {
+  --monospace-font: 'Roboto Mono', monospace;
+  --primary-font: 'Roboto Slab', serif;
+  --background-color: #efefef;
+  --primary-color: #111111;
+  --inverse-color: #efefef;
+  --surface-color: #e6e6e6;
+  --accent-color: #ff000;
+
+  --base-size: 16px;
+
+  --regular: 400;
+  --bold: 600;
+
+  --shadow-color: 0deg 0% 50%;
+
+  --size-xs: calc(var(--size-s) / 2);
+  --size-s: calc(var(--base-size) / 2);
+  --size-m: var(--base-size);
+  --size-l: calc(var(--base-size) * 2);
+  --size-xl: calc(var(--size-l) * 2);
+
+  --base-font-size: 28px;
+  --radii: 8px;
+
+  --text-glow:
+    0 0 7px var(--primary-color),
+    0 0 10px var(--primary-color),
+    0 0 82px var(--background-color);
+
+  --small-shadow: 0px 1px 1px hsl(var(--shadow-color) / 0.7);
+
+  --medium-shadow:
+    0px 2px 2px hsl(var(--shadow-color) / 0.333),
+    0px 4px 4px hsl(var(--shadow-color) / 0.333),
+    0px 6px 6px hsl(var(--shadow-color) / 0.333);
+
+  --large-shadow:
+    0px 2px 2px hsl(var(--shadow-color) / 0.2),
+    0px 4px 4px hsl(var(--shadow-color) / 0.2),
+    0px 8px 8px hsl(var(--shadow-color) / 0.2),
+    0px 16px 16px hsl(var(--shadow-color) / 0.2),
+    0px 32px 32px hsl(var(--shadow-color) / 0.2);
+}
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333333;
+    --primary-color: #efefef;
+    --inverse-color: #111111;
+    --surface-color: #262626;
+    --accent-color: #ff000;
+
+    --shadow-color: 0deg 0% 15%;
+  }
+}
+
+@media(max-width: 1024px) {
+  :root {
+    --base-font-size: 28px;
+    --base-size: 16px;
+  }
+}
+
+@media(max-width: 812px) {
+  :root {
+    --base-font-size: 18px;
+    --base-size: 8px;
+  }
+}
+
+@media(max-width: 600px) {
+  :root {
+    --base-font-size: 14px;
+    --base-size: 6px;
+  }
+}
+
+@media(max-width: 414px) {
+  :root {
+    --base-size: 4px;
+  }
+}
+
+@media(max-width: 375px) {
+  :root {
+    --base-font-size: 10px;
+  }
+}
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--primary-color);
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--size-l) 0;
+  font-family: var(--primary-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 999;
+  padding: var(--size-l) 0 0 0;
+  margin-bottom: var(--size-l);
+  //box-shadow: var(--medium-shadow);
+}
