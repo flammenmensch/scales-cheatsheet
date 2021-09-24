@@ -2,7 +2,7 @@ name: deploy
 on:
   push:
     branches:
-      - feat/split-workflow
+      - master
 jobs:
   install:
     name: Install dependencies
@@ -23,7 +23,7 @@ jobs:
         with:
           name: node_modules.tar.gz
           path: node_modules.tar.gz
-          retention_days: 1
+          retention-days: 1
 
   build:
     name: Build application
