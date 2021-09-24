@@ -1,15 +1,15 @@
 export enum Note {
   C = 'C',
-  C_SHARP = 'C&#9839;/D&#9837;',
+  C_SHARP = 'C&#9839;',
   D = 'D',
-  D_SHARP = 'D&#9839;/E&#9837;',
+  D_SHARP = 'D&#9839;',
   E = 'E',
   F = 'F',
-  F_SHARP = 'F&#9839;/G&#9837;',
+  F_SHARP = 'F&#9839;',
   G = 'G',
-  G_SHARP = 'G&#9839;/A&#9837;',
+  G_SHARP = 'G&#9839;',
   A = 'A',
-  A_SHARP = 'A&#9839;/B&#9837;',
+  A_SHARP = 'A&#9839;',
   B = 'B',
 }
 

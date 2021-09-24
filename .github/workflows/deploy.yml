@@ -2,9 +2,28 @@ name: deploy
 on:
   push:
     branches:
-      - master
+      - feat/split-workflow
 jobs:
+  install:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm ci
+      - name: Upload node_modules folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: node_modules
+          path: node_modules
+
   build:
+    name: Build application
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -13,12 +32,28 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Install dependencies
-        run: npm ci
+      - name: Download node_modules
+        uses: actions/download-artifact@v2
+        with:
+          - name: node_modules
       - name: Build application
         run: npm run build --if-present
         env:
           PUBLIC_URL: /scales-cheatsheet
+      - name: Upload build folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+
+  publish:
+    name: Publish to gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build folder
+        uses: actions/download-artifact@v2
+        with:
+          name: build
       - name: Deploy to github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
