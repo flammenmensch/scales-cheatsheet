@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/scales-cheatsheet/static/css/main.22dc9cc5.chunk.css",
-    "main.js": "/scales-cheatsheet/static/js/main.ff91cd44.chunk.js",
-    "main.js.map": "/scales-cheatsheet/static/js/main.ff91cd44.chunk.js.map",
+    "main.css": "/scales-cheatsheet/static/css/main.d652173b.chunk.css",
+    "main.js": "/scales-cheatsheet/static/js/main.bf9ee81b.chunk.js",
+    "main.js.map": "/scales-cheatsheet/static/js/main.bf9ee81b.chunk.js.map",
     "runtime-main.js": "/scales-cheatsheet/static/js/runtime-main.38bb3a54.js",
     "runtime-main.js.map": "/scales-cheatsheet/static/js/runtime-main.38bb3a54.js.map",
     "static/css/2.95c51823.chunk.css": "/scales-cheatsheet/static/css/2.95c51823.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.e41cdfba.chunk.js.map": "/scales-cheatsheet/static/js/3.e41cdfba.chunk.js.map",
     "index.html": "/scales-cheatsheet/index.html",
     "static/css/2.95c51823.chunk.css.map": "/scales-cheatsheet/static/css/2.95c51823.chunk.css.map",
-    "static/css/main.22dc9cc5.chunk.css.map": "/scales-cheatsheet/static/css/main.22dc9cc5.chunk.css.map",
+    "static/css/main.d652173b.chunk.css.map": "/scales-cheatsheet/static/css/main.d652173b.chunk.css.map",
     "static/js/2.e5eb40bb.chunk.js.LICENSE.txt": "/scales-cheatsheet/static/js/2.e5eb40bb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.38bb3a54.js",
     "static/css/2.95c51823.chunk.css",
     "static/js/2.e5eb40bb.chunk.js",
-    "static/css/main.22dc9cc5.chunk.css",
-    "static/js/main.ff91cd44.chunk.js"
+    "static/css/main.d652173b.chunk.css",
+    "static/js/main.bf9ee81b.chunk.js"
   ]
 }
