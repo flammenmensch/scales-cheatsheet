@@ -16,11 +16,13 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: npm ci
+      - name: Compress node_modules folder
+        run: tar -zcvf node_modules.tar.gz node_modules
       - name: Upload node_modules folder
         uses: actions/upload-artifact@v2
         with:
-          name: node_modules
-          path: node_modules
+          name: node_modules.tar.gz
+          path: node_modules.tar.gz
 
   build:
     name: Build application
@@ -33,19 +35,23 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Download node_modules
+      - name: Download node_modules.tar.gz
         uses: actions/download-artifact@v2
         with:
-          name: node_modules
+          name: node_modules.tar.gz
+      - name: Uncompress node_modules.tar.gz
+        run: tar xzf node_modules.tar.gz
       - name: Build application
         run: npm run build --if-present
         env:
           PUBLIC_URL: /scales-cheatsheet
+      - name: Compress build folder
+        run: tar -xzvf build.tar.gz build
       - name: Upload build folder
         uses: actions/upload-artifact@v2
         with:
-          name: build
-          path: build
+          name: build.tar.gz
+          path: build.tar.gz
 
   publish:
     name: Publish to gh-pages
@@ -55,7 +61,9 @@ jobs:
       - name: Download build folder
         uses: actions/download-artifact@v2
         with:
-          name: build
+          name: build.tar.gz
+      - name: Uncompress build folder
+        run: tar xaf build.tar.gz
       - name: Deploy to github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
