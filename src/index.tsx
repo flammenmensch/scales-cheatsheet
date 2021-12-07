@@ -10,7 +10,9 @@ import {
   MajorPentatonicScale,
   MajorScale,
   MinorPentatonicScale,
-  MinorScale,
+  NaturalMinorScale,
+  HarmonicMinorScale,
+  MelodicMinorScale,
   Note,
 } from './domain';
 
@@ -45,7 +47,21 @@ const App = () => {
       </div>
       <Row>
         <ScaleComponent title="Major" root={root} formula={MajorScale} />
-        <ScaleComponent title="Minor" root={root} formula={MinorScale} />
+        <ScaleComponent
+          title="Natural Minor"
+          root={root}
+          formula={NaturalMinorScale}
+        />
+        <ScaleComponent
+          title="Harmonic Minor"
+          root={root}
+          formula={HarmonicMinorScale}
+        />
+        <ScaleComponent
+          title="Melodic Minor"
+          root={root}
+          formula={MelodicMinorScale}
+        />
         <ScaleComponent
           title="Major Pentatonic"
           root={root}

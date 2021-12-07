@@ -14,7 +14,8 @@ export enum Note {
 }
 
 export enum Step {
-  MinorSecond = 1,
+  First = 0,
+  MinorSecond,
   MajorSecond,
   MinorThird,
   MajorThird,
@@ -39,9 +40,10 @@ export const chromaticScale: Scale = [
   Note.B,
 ];
 
-export const CHROMATIC_SCALE_LENGTH = 12;
+export const CHROMATIC_SCALE_LENGTH = chromaticScale.length;
 
 export const MajorScale: ScaleFormula = [
+  Step.First,
   Step.MajorSecond,
   Step.MajorSecond,
   Step.MinorSecond,
@@ -50,16 +52,38 @@ export const MajorScale: ScaleFormula = [
   Step.MajorSecond,
 ];
 
-export const MinorScale: ScaleFormula = [
+export const NaturalMinorScale: ScaleFormula = [
+  Step.First,
   Step.MajorSecond,
   Step.MinorSecond,
   Step.MajorSecond,
   Step.MajorSecond,
   Step.MinorSecond,
+  Step.MajorSecond,
+];
+
+export const HarmonicMinorScale: ScaleFormula = [
+  Step.First,
+  Step.MajorSecond,
+  Step.MinorSecond,
+  Step.MajorSecond,
+  Step.MajorSecond,
+  Step.MinorSecond,
+  Step.MinorThird,
+];
+
+export const MelodicMinorScale: ScaleFormula = [
+  Step.First,
+  Step.MajorSecond,
+  Step.MinorSecond,
+  Step.MajorSecond,
+  Step.MajorSecond,
+  Step.MajorSecond,
   Step.MajorSecond,
 ];
 
 export const MajorPentatonicScale: ScaleFormula = [
+  Step.First,
   Step.MajorSecond,
   Step.MajorSecond,
   Step.MinorThird,
@@ -67,6 +91,7 @@ export const MajorPentatonicScale: ScaleFormula = [
 ];
 
 export const MinorPentatonicScale: ScaleFormula = [
+  Step.First,
   Step.MinorThird,
   Step.MajorSecond,
   Step.MajorSecond,
@@ -74,6 +99,7 @@ export const MinorPentatonicScale: ScaleFormula = [
 ];
 
 export const BluesScale: ScaleFormula = [
+  Step.First,
   Step.MinorThird,
   Step.MajorSecond,
   Step.MinorSecond,
@@ -95,8 +121,6 @@ export const getNoteIndicesByFormula = (formula: ScaleFormula) => {
 
   let prevIndex = 0;
   let formulaIndex = 0;
-
-  result.add(0); // Add root note
 
   for (let i = 0; i < CHROMATIC_SCALE_LENGTH; i++) {
     if (i - prevIndex === formula[formulaIndex]) {
