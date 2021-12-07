@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/scales-cheatsheet/static/css/main.d652173b.chunk.css",
-    "main.js": "/scales-cheatsheet/static/js/main.bf9ee81b.chunk.js",
-    "main.js.map": "/scales-cheatsheet/static/js/main.bf9ee81b.chunk.js.map",
+    "main.js": "/scales-cheatsheet/static/js/main.ffdedd8c.chunk.js",
+    "main.js.map": "/scales-cheatsheet/static/js/main.ffdedd8c.chunk.js.map",
     "runtime-main.js": "/scales-cheatsheet/static/js/runtime-main.38bb3a54.js",
     "runtime-main.js.map": "/scales-cheatsheet/static/js/runtime-main.38bb3a54.js.map",
     "static/css/2.95c51823.chunk.css": "/scales-cheatsheet/static/css/2.95c51823.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.95c51823.chunk.css",
     "static/js/2.e5eb40bb.chunk.js",
     "static/css/main.d652173b.chunk.css",
-    "static/js/main.bf9ee81b.chunk.js"
+    "static/js/main.ffdedd8c.chunk.js"
   ]
 }
